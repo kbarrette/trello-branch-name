@@ -7,7 +7,6 @@
     var title = $('h2.window-title-text').text().toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '_');
     var branch_name = title + "_tr_" + hash;
 
-    console.log(branch_name);
     copy(branch_name);
   }
 

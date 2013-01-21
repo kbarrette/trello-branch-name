@@ -17,6 +17,7 @@
   "permissions": [
     "clipboardWrite",
     "tabs",
+    "notifications",
     "*://trello.com/card/*"
   ],
 

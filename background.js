@@ -13,10 +13,11 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 
   // Copy to OS clipboard
-  if (request.action == "copy") {
+  if (request.action == "copy" && request.value) {
     $("#clipboard").val(request.value).select();
     document.execCommand("copy");
     $("#clipboard").val("");
+    webkitNotifications.createNotification(null, "Copied branch name", "Copied '" + request.value + "' to clipboard").show();
   }
 
   sendResponse({});
