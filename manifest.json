@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Trello branch name",
+  "description": "This extension creates a git branch name from a Trello card and puts it in your paste buffer",
+  "version": "1.0",
+
+  "background": {
+    "page": "background.html"
+  },
+
+  "permissions": [
+    "clipboardWrite",
+    "tabs",
+    "*://trello.com/card/*"
+  ],
+
+  "page_action": {
+    "default_title": "Trello branch name"
+  }
+}
