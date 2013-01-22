@@ -1,5 +1,9 @@
+var trello_urls = new RegExp(".*://trello.com/card/.*");
+
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  chrome.pageAction.show(tabId);
+  if (trello_urls.test(tab.url)) {
+    chrome.pageAction.show(tabId);
+  }
 });
 
 chrome.pageAction.onClicked.addListener(function(tab) {
