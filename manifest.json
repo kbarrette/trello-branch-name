@@ -21,6 +21,8 @@
     "*://trello.com/card/*"
   ],
 
+  "options_page": "options.html",
+
   "page_action": {
     "default_title": "Trello branch name",
     "default_icon": {
