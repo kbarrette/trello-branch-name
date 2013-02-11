@@ -4,10 +4,8 @@
 
   function getBranchName() {
     var hash = $(':contains("Link to this card") ~ input')[0].value.replace(/http.*\//, '');
-    var title = $('h2.window-title-text').text().toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '_');
-    var branch_name = title + "_tr_" + hash;
-
-    copy(branch_name);
+    var title = $('h2.window-title-text').text();
+    copyBranchName(title, hash);
   }
 
   function openPopover() {
@@ -18,8 +16,8 @@
     $(popover_selector + " .js-close-popover")[0].click();
   }
 
-  function copy(branch_name) {
-    chrome.extension.sendMessage({action: "copy", value: branch_name});
+  function copyBranchName(title, hash) {
+    chrome.extension.sendMessage({action: "copyBranchName", title: title, hash: hash});
   }
 
   if (!$(popover_selector).length) {
