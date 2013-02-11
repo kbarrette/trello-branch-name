@@ -1,3 +1,8 @@
+// Initialize storage
+if (!localStorage.isInitialized) {
+  localStorage.onlyCopyHash = false;
+}
+
 // Copy text to OS clipboard
 function copy(text) {
   $("#clipboard").val(text).select();
@@ -27,7 +32,7 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
   // Copy branch name to OS clipboard
   if (request.action == "copyBranchName" && request.title && request.hash) {
     var formatted_title = request.title.toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '_');
-    var branch_name = formatted_title + "_tr_" + request.hash;
+    var branch_name = JSON.parse(localStorage.onlyCopyHash) ? "tr_" + request.hash : formatted_title + "_tr_" + request.hash;
     copy(branch_name);
 
     webkitNotifications.createNotification(null, "Copied branch name", "Copied '" + branch_name + "' to clipboard").show();
