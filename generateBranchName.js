@@ -9,7 +9,7 @@
   }
 
   function openPopover() {
-    $('a:contains("More")')[0].click();
+    $('a.js-more-menu')[0].click();
   }
 
   function closePopover() {
