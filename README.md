@@ -5,7 +5,7 @@ A Chrome extension to create a git branch name from a Trello card
 
 Installation:
 
-1. Download http://kbarrette.github.com/trello-branch-name/trello-branch-name-2.1.crx
+1. Download http://kbarrette.github.com/trello-branch-name/trello-branch-name-3.0.crx
 2. Go to chrome://extensions
 3. Drag and drop the .crx file onto the extensions page
 4. Agree to the permissions

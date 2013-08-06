@@ -11,7 +11,7 @@ function copy(text) {
 }
 
 // Only activate on matching urls
-var trello_urls = new RegExp(".*://trello.com/card/.*");
+var trello_urls = new RegExp(".*://trello.com/c/.*");
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (trello_urls.test(tab.url)) {
     chrome.pageAction.show(tabId);
